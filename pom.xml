@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.twobox.bc</groupId>
+    <artifactId>bc-game</artifactId>
+    <version>${mversion}</version>
+    <name>game</name>
+    <packaging>pom</packaging>
+    <description>Demo project for Spring Boot</description>
+    <modules>
+        <module>morris-user</module>
+    </modules>
+    <properties>
+        <!-- 统一管理版本 -->
+        <mversion>0.0.1-jdk17-SNAPSHOT</mversion>
+        <java.version>17</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <lombok.version>1.18.38</lombok.version>
+        <spring.boot.version>3.4.7</spring.boot.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <flatten-maven-plugin.version>1.7.2</flatten-maven-plugin.version>
+    </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+   <build>
+       <pluginManagement>
+           <plugins>
+               <plugin>
+                   <groupId>org.codehaus.mojo</groupId>
+                   <artifactId>flatten-maven-plugin</artifactId>
+                   <version>${flatten-maven-plugin.version}</version>
+                   <configuration>
+                       <flattenMode>oss</flattenMode>
+                       <updatePomFile>true</updatePomFile>
+                   </configuration>
+                   <executions>
+                       <execution>
+                           <goals>
+                               <goal>flatten</goal>
+                           </goals>
+                           <id>flatten</id>
+                           <phase>process-resources</phase>
+                       </execution>
+                       <execution>
+                           <goals>
+                               <goal>clean</goal>
+                           </goals>
+                           <id>flatten.clean</id>
+                           <phase>clean</phase>
+                       </execution>
+                   </executions>
+               </plugin>
+           </plugins>
+       </pluginManagement>
+
+   </build>
+
+
+</project>
