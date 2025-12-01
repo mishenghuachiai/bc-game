@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.twobox.bc</groupId>
     <artifactId>bc-game</artifactId>
-    <version>${mversion}</version>
+    <version>${revision}</version>
     <name>game</name>
     <packaging>pom</packaging>
     <description>Demo project for Spring Boot</description>
@@ -13,7 +13,7 @@
     </modules>
     <properties>
         <!-- 统一管理版本 -->
-        <mversion>0.0.1-jdk17-SNAPSHOT</mversion>
+        <revision>0.0.1-jdk17-SNAPSHOT</revision>
         <java.version>17</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
