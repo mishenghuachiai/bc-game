@@ -1,19 +1,19 @@
 package com.oder.controller.admin;
 
 
-import com.oder.common.UserRestClient;
-import lombok.RequiredArgsConstructor;
+import facade.UserFacade;
+import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/v1/orders")
-@RequiredArgsConstructor
 public class UserOrderController {
-    private final UserRestClient userRestClient;
+    @DubboReference(url = "tri://127.0.0.1:50051",timeout = 30000,group = "DUBBO", version = "1.0.0")
+    private UserFacade userFacade;
     @RequestMapping(value = "/order")
     public String orderHome(){
-        userRestClient.getUserById(1);
+        userFacade.getUserById(1);
         return "hello order";
     }
 }

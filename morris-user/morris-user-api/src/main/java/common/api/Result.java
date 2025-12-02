@@ -3,10 +3,12 @@ package common.api;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
+import java.io.Serializable;
 import java.time.Instant;
 @RequiredArgsConstructor
 @Data
-public class Result<T> {
+public class Result<T> implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     private int code;
     private String message;
