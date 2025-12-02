@@ -1,8 +1,10 @@
 package common.api;
 
 import lombok.Data;
-import java.time.Instant;
+import lombok.RequiredArgsConstructor;
 
+import java.time.Instant;
+@RequiredArgsConstructor
 @Data
 public class Result<T> {
 
