@@ -5,7 +5,7 @@ import facade.UserFacade;
 import org.apache.dubbo.config.annotation.DubboService;
 import response.UserResponse;
 
-@DubboService(protocol = "tri")
+@DubboService(protocol = "tri",version = "1.0.0",group = "DUBBO")
 public class UserController implements UserFacade {
     @Override
     public Result<UserResponse> getUserById(Integer id) {
