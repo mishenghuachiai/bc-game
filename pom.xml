@@ -5,11 +5,12 @@
     <groupId>com.twobox.bc</groupId>
     <artifactId>bc-game</artifactId>
     <version>${revision}</version>
-    <name>game</name>
+    <name>${project.artifactId}</name>
     <packaging>pom</packaging>
-    <description>Demo project for Spring Boot</description>
+    <description>顶级pom文件值</description>
     <modules>
         <module>morris-user</module>
+        <module>morris-order</module>
     </modules>
     <properties>
         <!-- 统一管理版本 -->
@@ -18,23 +19,28 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <lombok.version>1.18.38</lombok.version>
-        <spring.boot.version>3.4.7</spring.boot.version>
+        <spring-boot.version>3.4.7</spring-boot.version>
+        <spring-boot-dependencys.version>3.4.7</spring-boot-dependencys.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <flatten-maven-plugin.version>1.7.2</flatten-maven-plugin.version>
+        <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
+        <spring-cloud.version>2024.0.2</spring-cloud.version>
     </properties>
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring.boot.version}</version>
+                <version>${spring-boot-dependencys.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>${lombok.version}</version>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -45,31 +51,44 @@
                    <groupId>org.codehaus.mojo</groupId>
                    <artifactId>flatten-maven-plugin</artifactId>
                    <version>${flatten-maven-plugin.version}</version>
+               </plugin>
+               <plugin>
+                   <groupId>org.apache.maven.plugins</groupId>
+                   <artifactId>maven-compiler-plugin</artifactId>
+                   <version>${maven-compiler-plugin.version}</version>
                    <configuration>
-                       <flattenMode>oss</flattenMode>
-                       <updatePomFile>true</updatePomFile>
+                       <source>${java.version}</source>
+                       <target>${java.version}</target>
                    </configuration>
-                   <executions>
-                       <execution>
-                           <goals>
-                               <goal>flatten</goal>
-                           </goals>
-                           <id>flatten</id>
-                           <phase>process-resources</phase>
-                       </execution>
-                       <execution>
-                           <goals>
-                               <goal>clean</goal>
-                           </goals>
-                           <id>flatten.clean</id>
-                           <phase>clean</phase>
-                       </execution>
-                   </executions>
                </plugin>
            </plugins>
        </pluginManagement>
-
+       <plugins>
+           <plugin>
+               <groupId>org.codehaus.mojo</groupId>
+               <artifactId>flatten-maven-plugin</artifactId>
+               <version>${flatten-maven-plugin.version}</version>
+               <configuration>
+                   <flattenMode>oss</flattenMode>
+                   <updatePomFile>true</updatePomFile>
+               </configuration>
+               <executions>
+                   <execution>
+                       <goals>
+                           <goal>flatten</goal>
+                       </goals>
+                       <id>flatten</id>
+                       <phase>process-resources</phase>
+                   </execution>
+                   <execution>
+                       <goals>
+                           <goal>clean</goal>
+                       </goals>
+                       <id>flatten.clean</id>
+                       <phase>clean</phase>
+                   </execution>
+               </executions>
+           </plugin>
+       </plugins>
    </build>
-
-
 </project>

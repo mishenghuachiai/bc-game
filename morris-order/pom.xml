@@ -7,13 +7,13 @@
         <version>${revision}</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-    <artifactId>morris-user</artifactId>
+    <artifactId>morris-order</artifactId>
     <name>${project.artifactId}</name>
     <packaging>pom</packaging>
     <description>this is user module</description>
     <modules>
-        <module>morris-user-api</module>
-        <module>morris-user-biz</module>
+        <module>morris-order-api</module>
+        <module>morris-order-biz</module>
     </modules>
     <dependencies>
         <dependency>

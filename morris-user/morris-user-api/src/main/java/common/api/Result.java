@@ -1,4 +1,4 @@
-package com.user.common.api;
+package common.api;
 
 import lombok.Data;
 import java.time.Instant;
@@ -10,6 +10,8 @@ public class Result<T> {
     private String message;
     private T data;
     private long timestamp;
+    private String traceId;
+    private Boolean isRetryable;
 
     public Result(int code, String message, T data) {
         this.code = code;
