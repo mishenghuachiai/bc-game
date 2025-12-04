@@ -1,0 +1,5 @@
+com\user\api\facade\UserFacade.class
+com\user\api\request\UserRequest.class
+com\user\api\common\convert\ConvertUtils.class
+com\user\api\common\api\Result.class
+com\user\api\response\UserResponse.class

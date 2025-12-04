@@ -19,13 +19,12 @@
             <version>${spring-boot.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.twobox.bc</groupId>
-            <artifactId>morris-user-api</artifactId>
-            <version>${revision}</version>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
         <dependency>
             <groupId>com.twobox.bc</groupId>
-            <artifactId>morris-order-api</artifactId>
+            <artifactId>morris-user-api</artifactId>
             <version>${revision}</version>
         </dependency>
     </dependencies>

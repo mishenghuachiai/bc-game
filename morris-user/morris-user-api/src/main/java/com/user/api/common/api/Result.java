@@ -1,10 +1,15 @@
-package common.api;
+package com.user.api.common.api;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
 import java.time.Instant;
 
 @Data
-public class Result<T> {
+@NoArgsConstructor
+public class Result<T> implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     private int code;
     private String message;

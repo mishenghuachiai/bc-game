@@ -1,4 +1,4 @@
-package request;
+package com.user.api.request;
 
 import lombok.Data;
 
