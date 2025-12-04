@@ -1,12 +1,13 @@
-package common.api;
+package com.user.api.common.api;
 
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.time.Instant;
-@RequiredArgsConstructor
+
 @Data
+@NoArgsConstructor
 public class Result<T> implements Serializable {
     private static final long serialVersionUID = 1L;
 

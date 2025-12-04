@@ -1,4 +1,4 @@
-package common.convert;
+package com.user.api.common.convert;
 
 import org.springframework.beans.BeanUtils;
 

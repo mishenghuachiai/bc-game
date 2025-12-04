@@ -19,20 +19,13 @@
             <version>${spring-boot.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.twobox.bc</groupId>
             <artifactId>morris-user-api</artifactId>
             <version>${revision}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.twobox.bc</groupId>
-            <artifactId>morris-order-api</artifactId>
-            <version>${revision}</version>
-        </dependency>
-        <!-- 2. 核心：Dubbo Spring Boot Starter（内置 Triple 协议 + 注解支持） -->
-        <dependency>
-            <groupId>org.apache.dubbo</groupId>
-            <artifactId>dubbo-spring-boot-starter</artifactId>
-            <version>${dubbo.version}</version>
         </dependency>
     </dependencies>
 

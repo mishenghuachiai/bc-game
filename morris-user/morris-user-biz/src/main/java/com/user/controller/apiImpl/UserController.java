@@ -1,18 +1,18 @@
 package com.user.controller.apiImpl;
 
-import common.api.Result;
-import facade.UserFacade;
-import org.apache.dubbo.config.annotation.DubboService;
-import response.UserResponse;
+import com.user.api.common.api.Result;
+import com.user.api.facade.UserFacade;
+import com.user.api.response.UserResponse;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
 
-@DubboService(protocol = "tri",version = "1.0.0",group = "DUBBO")
+
+@RestController
 public class UserController implements UserFacade {
     @Override
-    public Result<UserResponse> getUserById(Integer id) {
+    public Result<UserResponse> getUserById(@PathVariable(value = "id") Integer id) {
         String formatted = "\"%d\"".formatted(128);
         System.out.println(formatted);
         return Result.success();
-//    }
     }
-
 }
