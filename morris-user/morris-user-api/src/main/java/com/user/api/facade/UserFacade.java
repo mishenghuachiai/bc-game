@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @FeignClient(name = "${application.user.name}",contextId = "UserFacade")
 public interface UserFacade {
+
     @GetMapping("/{id}")
     Result<UserResponse> getUserById(@PathVariable(value = "id") Integer id);
 }
